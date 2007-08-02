@@ -5,8 +5,9 @@ CGContextRef MyCreateBitmapContext(int pixelsWide, int pixelsHigh);
 void processFilters(ImageProcessor *ip);
 void applyCrop(ImageProcessor *ip, NSString *arg);
 void applyUnsharpMask(ImageProcessor *ip, NSString *arg);
+void applyLanczosScale(ImageProcessor *ip, NSString *arg);
 
-int main (int argc, const char * argv[]) {
+int main (int argc, const char *argv[]) {
 
 	if (argc < 3) {
 		fprintf(stderr, "Usage: %s [options] inputfile outputfile\n", argv[0]);
@@ -44,6 +45,9 @@ void processFilters(ImageProcessor *ip) {
 	value = [defaults objectForKey:@"unsharpmask"];
 	if (value) applyUnsharpMask(ip, value);
 
+	value = [defaults objectForKey:@"lanczosscale"];
+	if (value) applyLanczosScale(ip, value);
+
 }
 
 
@@ -76,6 +80,22 @@ void applyUnsharpMask(ImageProcessor *ip, NSString *arg) {
 	float intensity = [[items objectAtIndex:1] floatValue];
 	
 	[ip applyUnsharpMaskRadius:radius Intensity:intensity];
+
+}
+
+
+void applyLanczosScale(ImageProcessor *ip, NSString *arg) {
+
+	NSArray *items = [arg componentsSeparatedByString:@","];
+	if ([items count] != 2) {
+		NSLog(@"-lanczosscale requires scale,aspectratio argument");
+		return;
+	}
+
+	float scale = [[items objectAtIndex:0] floatValue];
+	float aspectratio = [[items objectAtIndex:1] floatValue];
+	
+	[ip applyLanczosScale:scale AspectRatio:aspectratio];
 
 }
 

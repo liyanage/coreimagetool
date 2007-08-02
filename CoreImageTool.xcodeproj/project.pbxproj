@@ -38,7 +38,7 @@
 		1BA8BEED0C61478A002191A1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		1BB33A580C60917D000DA540 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		32A70AAB03705E1F00C91783 /* CoreImageTool_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageTool_Prefix.pch; sourceTree = "<group>"; };
-		8DD76FA10486AA7600D96B5E /* CoreImageTool */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = CoreImageTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD76FA10486AA7600D96B5E /* CoreImageTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CoreImageTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859EA3029092ED04C91782 /* CoreImageTool.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CoreImageTool.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

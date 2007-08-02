@@ -28,6 +28,7 @@
 
 - (void)applyCropX:(float)x Y:(float)y W:(float)w H:(float)h;
 - (void)applyUnsharpMaskRadius:(float)radius Intensity:(float)intensity;
+- (void)applyLanczosScale:(float)scale AspectRatio:(float)aspectRatio;
 
 - (CIFilter *)prepareFilter:(NSString *)name;
 

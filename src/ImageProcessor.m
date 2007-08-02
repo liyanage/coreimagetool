@@ -76,6 +76,14 @@
 }
 
 
+- (void)applyLanczosScale:(float)scale AspectRatio:(float)aspectRatio {
+	CIFilter *filter = [self prepareFilter:@"CILanczosScaleTransform"];
+	[filter setValue:[NSNumber numberWithFloat:scale] forKey:@"inputScale"];
+	[filter setValue:[NSNumber numberWithFloat:aspectRatio] forKey:@"inputAspectRatio"];
+	[self setValue:[filter valueForKey: @"outputImage"] forKey:@"ci"];
+}
+
+
 
 - (CIFilter *)prepareFilter:(NSString *)name {
 	CIFilter *filter = [CIFilter filterWithName:name];

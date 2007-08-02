@@ -7,21 +7,13 @@
 .Dt CoreImageTool 1      \" Program name and manual section number 
 .Os Darwin
 .Sh NAME                 \" Section Header - required - don't modify 
-.Nm CoreImageTool,
-.\" The following lines are read in generating the apropos(man -k) database. Use only key
-.\" words here as the database is built based on the words here and in the .ND line. 
-.Nm Other_name_for_same_program(),
-.Nm Yet another name for the same program.
-.\" Use .Nm macro to designate other names for the documented program.
-.Nd This line parsed for whatis database.
+.Nm CoreImageTool
+.Nd Command line core image processing tool.
 .Sh SYNOPSIS             \" Section Header - required - don't modify
 .Nm
-.Op Fl abcd              \" [-abcd]
-.Op Fl a Ar path         \" [-a path] 
-.Op Ar file              \" [file]
-.Op Ar                   \" [file ...]
-.Ar arg0                 \" Underlined argument - use .Ar anywhere to underline
-arg2 ...                 \" Arguments
+.Op Ar filter options    \" [filters options]
+.Ar input                 \" Underlined argument - use .Ar anywhere to underline
+.Ar output                 \" Underlined argument - use .Ar anywhere to underline
 .Sh DESCRIPTION          \" Section Header - required - don't modify
 Use the .Nm macro to refer to your program throughout the man page like such:
 .Nm
