@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0AAC8C0C62505500211E78 /* CommandLineDriver.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0AAC8A0C62505500211E78 /* CommandLineDriver.h */; };
+		1B0AAC8D0C62505500211E78 /* CommandLineDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0AAC8B0C62505500211E78 /* CommandLineDriver.m */; };
+		1B0AAD4D0C626C2B00211E78 /* Action.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0AAD4B0C626C2B00211E78 /* Action.h */; };
+		1B0AAD4E0C626C2B00211E78 /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0AAD4C0C626C2B00211E78 /* Action.m */; };
+		1B0AAD690C626F8700211E78 /* ActionLoad.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0AAD670C626F8700211E78 /* ActionLoad.h */; };
+		1B0AAD6A0C626F8700211E78 /* ActionLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0AAD680C626F8700211E78 /* ActionLoad.m */; };
+		1B0AB0000C628D0000211E78 /* ActionStore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0AAFFE0C628D0000211E78 /* ActionStore.h */; };
+		1B0AB0010C628D0000211E78 /* ActionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0AAFFF0C628D0000211E78 /* ActionStore.m */; };
+		1B0AB0710C6290B100211E78 /* ActionFilter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0AB06F0C6290B100211E78 /* ActionFilter.h */; };
+		1B0AB0720C6290B100211E78 /* ActionFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0AB0700C6290B100211E78 /* ActionFilter.m */; };
+		1B0AB0C00C62994400211E78 /* FilterParameterParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0AB0BE0C62994400211E78 /* FilterParameterParser.h */; };
+		1B0AB0C10C62994400211E78 /* FilterParameterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0AB0BF0C62994400211E78 /* FilterParameterParser.m */; };
+		1B0AB0C40C62995200211E78 /* FilterParameterParserGeneric.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0AB0C20C62995200211E78 /* FilterParameterParserGeneric.h */; };
+		1B0AB0C50C62995200211E78 /* FilterParameterParserGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0AB0C30C62995200211E78 /* FilterParameterParserGeneric.m */; };
+		1B0AB2540C62A33F00211E78 /* FilterParameterParserCICrop.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0AB2520C62A33F00211E78 /* FilterParameterParserCICrop.h */; };
+		1B0AB2550C62A33F00211E78 /* FilterParameterParserCICrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0AB2530C62A33F00211E78 /* FilterParameterParserCICrop.m */; };
 		1BA8BB280C60A950002191A1 /* ImageProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BA8BB260C60A950002191A1 /* ImageProcessor.h */; };
 		1BA8BB290C60A950002191A1 /* ImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA8BB270C60A950002191A1 /* ImageProcessor.m */; };
 		1BA8BEEE0C61478A002191A1 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA8BEED0C61478A002191A1 /* ApplicationServices.framework */; };
@@ -25,6 +41,14 @@
 			files = (
 				8DD76F9F0486AA7600D96B5E /* CoreImageTool.1 in CopyFiles */,
 				1BA8BB280C60A950002191A1 /* ImageProcessor.h in CopyFiles */,
+				1B0AAC8C0C62505500211E78 /* CommandLineDriver.h in CopyFiles */,
+				1B0AAD4D0C626C2B00211E78 /* Action.h in CopyFiles */,
+				1B0AAD690C626F8700211E78 /* ActionLoad.h in CopyFiles */,
+				1B0AB0000C628D0000211E78 /* ActionStore.h in CopyFiles */,
+				1B0AB0710C6290B100211E78 /* ActionFilter.h in CopyFiles */,
+				1B0AB0C00C62994400211E78 /* FilterParameterParser.h in CopyFiles */,
+				1B0AB0C40C62995200211E78 /* FilterParameterParserGeneric.h in CopyFiles */,
+				1B0AB2540C62A33F00211E78 /* FilterParameterParserCICrop.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -33,6 +57,22 @@
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* CoreImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreImageTool.m; path = src/CoreImageTool.m; sourceTree = "<group>"; };
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		1B0AAC8A0C62505500211E78 /* CommandLineDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandLineDriver.h; path = src/CommandLineDriver.h; sourceTree = "<group>"; };
+		1B0AAC8B0C62505500211E78 /* CommandLineDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommandLineDriver.m; path = src/CommandLineDriver.m; sourceTree = "<group>"; };
+		1B0AAD4B0C626C2B00211E78 /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Action.h; path = src/Action.h; sourceTree = "<group>"; };
+		1B0AAD4C0C626C2B00211E78 /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Action.m; path = src/Action.m; sourceTree = "<group>"; };
+		1B0AAD670C626F8700211E78 /* ActionLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionLoad.h; path = src/ActionLoad.h; sourceTree = "<group>"; };
+		1B0AAD680C626F8700211E78 /* ActionLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionLoad.m; path = src/ActionLoad.m; sourceTree = "<group>"; };
+		1B0AAFFE0C628D0000211E78 /* ActionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionStore.h; path = src/ActionStore.h; sourceTree = "<group>"; };
+		1B0AAFFF0C628D0000211E78 /* ActionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionStore.m; path = src/ActionStore.m; sourceTree = "<group>"; };
+		1B0AB06F0C6290B100211E78 /* ActionFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionFilter.h; path = src/ActionFilter.h; sourceTree = "<group>"; };
+		1B0AB0700C6290B100211E78 /* ActionFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionFilter.m; path = src/ActionFilter.m; sourceTree = "<group>"; };
+		1B0AB0BE0C62994400211E78 /* FilterParameterParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterParameterParser.h; path = src/FilterParameterParser.h; sourceTree = "<group>"; };
+		1B0AB0BF0C62994400211E78 /* FilterParameterParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterParameterParser.m; path = src/FilterParameterParser.m; sourceTree = "<group>"; };
+		1B0AB0C20C62995200211E78 /* FilterParameterParserGeneric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterParameterParserGeneric.h; path = src/FilterParameterParserGeneric.h; sourceTree = "<group>"; };
+		1B0AB0C30C62995200211E78 /* FilterParameterParserGeneric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterParameterParserGeneric.m; path = src/FilterParameterParserGeneric.m; sourceTree = "<group>"; };
+		1B0AB2520C62A33F00211E78 /* FilterParameterParserCICrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterParameterParserCICrop.h; path = src/FilterParameterParserCICrop.h; sourceTree = "<group>"; };
+		1B0AB2530C62A33F00211E78 /* FilterParameterParserCICrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterParameterParserCICrop.m; path = src/FilterParameterParserCICrop.m; sourceTree = "<group>"; };
 		1BA8BB260C60A950002191A1 /* ImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageProcessor.h; path = src/ImageProcessor.h; sourceTree = "<group>"; };
 		1BA8BB270C60A950002191A1 /* ImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageProcessor.m; path = src/ImageProcessor.m; sourceTree = "<group>"; };
 		1BA8BEED0C61478A002191A1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -74,6 +114,22 @@
 				08FB7796FE84155DC02AAC07 /* CoreImageTool.m */,
 				1BA8BB260C60A950002191A1 /* ImageProcessor.h */,
 				1BA8BB270C60A950002191A1 /* ImageProcessor.m */,
+				1B0AAC8A0C62505500211E78 /* CommandLineDriver.h */,
+				1B0AAC8B0C62505500211E78 /* CommandLineDriver.m */,
+				1B0AAD4B0C626C2B00211E78 /* Action.h */,
+				1B0AAD4C0C626C2B00211E78 /* Action.m */,
+				1B0AAD670C626F8700211E78 /* ActionLoad.h */,
+				1B0AAD680C626F8700211E78 /* ActionLoad.m */,
+				1B0AAFFE0C628D0000211E78 /* ActionStore.h */,
+				1B0AAFFF0C628D0000211E78 /* ActionStore.m */,
+				1B0AB06F0C6290B100211E78 /* ActionFilter.h */,
+				1B0AB0700C6290B100211E78 /* ActionFilter.m */,
+				1B0AB0BE0C62994400211E78 /* FilterParameterParser.h */,
+				1B0AB0BF0C62994400211E78 /* FilterParameterParser.m */,
+				1B0AB2520C62A33F00211E78 /* FilterParameterParserCICrop.h */,
+				1B0AB2530C62A33F00211E78 /* FilterParameterParserCICrop.m */,
+				1B0AB0C20C62995200211E78 /* FilterParameterParserGeneric.h */,
+				1B0AB0C30C62995200211E78 /* FilterParameterParserGeneric.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -147,6 +203,14 @@
 			files = (
 				8DD76F9A0486AA7600D96B5E /* CoreImageTool.m in Sources */,
 				1BA8BB290C60A950002191A1 /* ImageProcessor.m in Sources */,
+				1B0AAC8D0C62505500211E78 /* CommandLineDriver.m in Sources */,
+				1B0AAD4E0C626C2B00211E78 /* Action.m in Sources */,
+				1B0AAD6A0C626F8700211E78 /* ActionLoad.m in Sources */,
+				1B0AB0010C628D0000211E78 /* ActionStore.m in Sources */,
+				1B0AB0720C6290B100211E78 /* ActionFilter.m in Sources */,
+				1B0AB0C10C62994400211E78 /* FilterParameterParser.m in Sources */,
+				1B0AB0C50C62995200211E78 /* FilterParameterParserGeneric.m in Sources */,
+				1B0AB2550C62A33F00211E78 /* FilterParameterParserCICrop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

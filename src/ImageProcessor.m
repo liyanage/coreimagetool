@@ -11,24 +11,32 @@
 
 @implementation ImageProcessor
 
++ (ImageProcessor *)processor {
+	return [[[ImageProcessor alloc] init] autorelease];
+}
+
+
 + (ImageProcessor *)processorForInputFile:(NSString *)inFilePath {
 	ImageProcessor *ip = [[[ImageProcessor alloc] initWithInputFile:inFilePath] autorelease];
 	return ip;
 }
 
-
 - (ImageProcessor *)initWithInputFile:(NSString *)inPath {
 	self = [super init];
 	if (!self) return nil;
 
-	[self setValue:inPath forKey:@"inFilePath"];
-	
-	if (![self setupImage]) {
+	if (![self setInputFile:inPath]) {
 		[self release];
 		return nil;
-	};
-	
+	}
+
 	return self;
+}
+
+
+- (BOOL)setInputFile:(NSString *)inPath {
+	[self setValue:inPath forKey:@"inFilePath"];
+	return [self setupImage]; 
 }
 
 
@@ -48,7 +56,7 @@
 		return NO;
 	}
 
-	ci = [[CIImage imageWithContentsOfURL:[NSURL fileURLWithPath:inFilePath]] retain];
+	[self setValue:[CIImage imageWithContentsOfURL:[NSURL fileURLWithPath:inFilePath]] forKey:@"ci"];
 	if (!ci) {
 		NSLog(@"Unable to load input file '%@'", inFilePath);
 		return NO;
@@ -56,31 +64,6 @@
 
 	return YES;
 
-}
-
-
-
-- (void)applyCropX:(float)x Y:(float)y W:(float)w H:(float)h {
-	CIFilter *filter = [self prepareFilter:@"CICrop"];
-	[filter setValue:[CIVector vectorWithX:x Y:y Z:w W:h] forKey:@"inputRectangle"];
-	[self setValue:[filter valueForKey: @"outputImage"] forKey:@"ci"];
-}
-
-
-
-- (void)applyUnsharpMaskRadius:(float)radius Intensity:(float)intensity {
-	CIFilter *filter = [self prepareFilter:@"CIUnsharpMask"];
-	[filter setValue:[NSNumber numberWithFloat:radius] forKey:@"inputRadius"];
-	[filter setValue:[NSNumber numberWithFloat:intensity] forKey:@"inputIntensity"];
-	[self setValue:[filter valueForKey: @"outputImage"] forKey:@"ci"];
-}
-
-
-- (void)applyLanczosScale:(float)scale AspectRatio:(float)aspectRatio {
-	CIFilter *filter = [self prepareFilter:@"CILanczosScaleTransform"];
-	[filter setValue:[NSNumber numberWithFloat:scale] forKey:@"inputScale"];
-	[filter setValue:[NSNumber numberWithFloat:aspectRatio] forKey:@"inputAspectRatio"];
-	[self setValue:[filter valueForKey: @"outputImage"] forKey:@"ci"];
 }
 
 
@@ -98,7 +81,9 @@
 
 
 
-
+- (void)applyFilter:(CIFilter *)filter {
+	[self setValue:[filter valueForKey: @"outputImage"] forKey:@"ci"];
+}
 
 
 
