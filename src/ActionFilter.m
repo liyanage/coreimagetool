@@ -11,29 +11,60 @@
 
 @implementation ActionFilter
 
-- (BOOL)runWithParameters:(NSArray *)parameters processor:(ImageProcessor *)ip {
-	NSString *filterName = [parameters objectAtIndex:0];
-	NSString *filterParameter = [parameters objectAtIndex:1];
-	NSLog(@"%@ %@", filterName, filterParameter);
+
+- (BOOL)run {
+	ImageProcessor *ip = [self keyedImageProcessor];
+	if (!ip) return NO;
+
+	NSString *filterName = [self parameterAtIndex:1];
+	NSString *filterParameter = [self parameterCount] > 2 ? [self parameterAtIndex:2] : nil;
+	NSLog(@"filter: %@ %@", filterName, filterParameter);
 
 	CIFilter *filter = [ip prepareFilter:filterName];
 	if (!filter) return NO;
+
+	if (![self configureFilter:filter named:filterName withParameterString:filterParameter]) return NO;
+	[ip applyFilter:filter];
+	return YES;
+}
+
+
+- (int)requiredParameterCount:(NSArray *)lookaheadArguments {
 	
-	FilterParameterParser *fpp = [FilterParameterParser parserForFilterName:filterName];
+	if ([lookaheadArguments count] < 2) {
+		NSLog(@"not enough arguments for filter action, need at least image key and filter name");
+		return 9999;
+	}
+	NSString *filterName = [lookaheadArguments objectAtIndex:1];
+	return [[self class] filterHasParameters:filterName] ? 3 : 2;
+}
+
+
++ (BOOL)filterHasParameters:(NSString *)filterName {
+	return ![[NSArray arrayWithObjects:
+		@"CIColorInvert",
+		@"CIMaskToAlpha",
+		@"CIMedianFilter",
+		nil
+	] containsObject:filterName];
+}
+
+
+- (BOOL)configureFilter:(CIFilter *)filter named:(NSString *)filterName withParameterString:(NSString *)filterParameter {
+
+	if (![[self class] filterHasParameters:filterName]) return YES;
+
+	FilterParameterParser *fpp = [FilterParameterParser parserForFilterName:filterName imageSource:self];
 	if (!fpp) return NO;
 	
 	if (![fpp configureFilter:filter withParameterString:filterParameter]) {
 		NSLog(@"Unable to configure filter '%@' with parameters '%@'", filterName, filterParameter);
 		return NO;
 	}
-	[ip applyFilter:filter];
 
 	return YES;
 
 }
 
-- (int)parameterCount {
-	return 2;
-}
 
 @end

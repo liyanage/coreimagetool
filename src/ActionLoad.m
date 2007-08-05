@@ -10,8 +10,11 @@
 
 @implementation ActionLoad
 
-- (BOOL)runWithParameters:(NSArray *)parameters processor:(ImageProcessor *)ip {
-	NSString *filename = [parameters objectAtIndex:0];
+- (BOOL)run {
+	NSString *key = [self keyParameter];
+	if (!key) return NO;
+	ImageProcessor *ip = [self createImageProcessorForKey:key];
+	NSString *filename = [self parameterAtIndex:1];
 	return [ip setInputFile:filename];
 }
 

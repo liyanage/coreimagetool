@@ -14,4 +14,7 @@
 
 }
 
++ (BOOL)filterHasParameters:(NSString *)filterName;
+- (BOOL)configureFilter:(CIFilter *)filter named:(NSString *)filterName withParameterString:(NSString *)filterParameter;
+
 @end

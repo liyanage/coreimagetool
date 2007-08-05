@@ -27,6 +27,7 @@
 - (void)freeContext;
 
 - (CIFilter *)prepareFilter:(NSString *)name;
+- (CIImage *)image;
 - (void)applyFilter:(CIFilter *)filter;
 
 @end

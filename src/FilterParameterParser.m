@@ -12,15 +12,23 @@
 @implementation FilterParameterParser
 
 
-+ (FilterParameterParser *)parserForFilterName:(NSString *)filterName {
++ (FilterParameterParser *)parserForFilterName:(NSString *)filterName imageSource:(id<KeyedImageSource>) imageSource {
 	Class parserClass = [FilterParameterParser classForFilterName:filterName];
 	FilterParameterParser *parser = [[[parserClass alloc] init] autorelease];
 	if (!parser) {
 		NSLog(@"Unable to create filter parameter parser for filter name '%@'", filterName);
 		return nil;
 	}
+	[parser setValue:imageSource forKey:@"imageSource"];
 	return parser;
 }
+
+
+- (void) dealloc {
+	[imageSource release];
+	[super dealloc];
+}
+
 
 
 + (Class)classForFilterName:(NSString *)filterName {
@@ -38,7 +46,7 @@
 
 - (NSDictionary *)splitParameterString:(NSString *)string {
 	NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-	NSArray *pairs = [string componentsSeparatedByString:@"/"];
+	NSArray *pairs = [string componentsSeparatedByString:@":"];
 	unsigned int i, count = [pairs count];
 	if (count < 1) {
 		NSLog(@"empty parameter string");
@@ -46,7 +54,7 @@
 	}
 	for (i = 0; i < count; i++) {
 		NSString *pair = [pairs objectAtIndex:i];
-		NSArray *keyvalue = [pair componentsSeparatedByString:@":"];
+		NSArray *keyvalue = [pair componentsSeparatedByString:@"="];
 		if ([keyvalue count] != 2) {
 			NSLog(@"invalid parameter key/value pair '%@'", pair);
 			continue;
@@ -59,6 +67,14 @@
 	}
 	return parameters;
 }
+
+
+
+- (id)string:(NSString *)string toValueOfClass:(NSString *)className {
+	id value = [ValueClassConverter convertString:string toValueOfClass:className imageSource:imageSource];
+	return value;
+}
+
 
 
 @end

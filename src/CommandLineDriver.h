@@ -13,6 +13,7 @@
 @interface CommandLineDriver : NSObject {
 	NSString *programName;
 	NSMutableArray *arguments;
+	NSMutableDictionary *processors;
 }
 
 + (int)runWithArguments:(const char*[])argv count:(int)argc;

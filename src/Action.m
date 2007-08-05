@@ -22,14 +22,72 @@
 }
 
 
-- (BOOL)runWithParameters:(NSArray *)parameters processor:(ImageProcessor *)ip {
+- (void) dealloc {
+	[processors release];
+	[parameters release];
+	[super dealloc];
+}
+
+
+- (BOOL)runWithParameters:(NSArray *)inParameters processors:(NSMutableDictionary *)inProcessors {
+	[self setValue:inProcessors forKey:@"processors"];
+	[self setValue:inParameters forKey:@"parameters"];
+	return [self run];
+}
+
+
+- (BOOL)run {
 	[NSException raise:NSGenericException format:@"%@ is abstract", _cmd];
 	return nil; // not reached
 }
 
 
-- (int)parameterCount {
-	return 1;
+- (int)requiredParameterCount:(NSArray *)lookaheadArguments {
+	return 2;
 }
+
+
+- (ImageProcessor *)imageProcessorForKey:(NSString *)key {
+	ImageProcessor *ip = [processors objectForKey:key];
+	if (!ip) {
+		NSLog(@"No image defined for key '%@'", key);
+	}
+	return ip;
+}
+
+- (CIImage *)imageForKey:(NSString *)key {
+	return [[self imageProcessorForKey:key] image];
+}
+
+
+- (ImageProcessor *)keyedImageProcessor {
+	return [self imageProcessorForKey:[self keyParameter]];
+}
+
+
+- (ImageProcessor *)createImageProcessorForKey:(NSString *)key {
+	ImageProcessor *ip = [ImageProcessor processor];
+	[processors setValue:ip forKey:key];
+	return ip;
+}
+
+
+- (NSString *)keyParameter {
+	return [self parameterAtIndex:0];
+}
+
+- (NSString *)parameterAtIndex:(int)i {
+	int count = [self parameterCount];
+	if (i >= count) {
+		NSLog(@"only %d parameters available, index %d not valid", count, i);
+		return nil;
+	}
+	return [parameters objectAtIndex:i];
+}
+
+- (int)parameterCount {
+	return [parameters count];
+}
+
 
 @end

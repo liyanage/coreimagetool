@@ -36,43 +36,56 @@
 	for (i = 1; i < argc; i++) {
 		[arguments addObject:[NSString stringWithUTF8String:argv[i]]];
 	}
+
+	[self setValue:[NSMutableDictionary dictionary] forKey:@"processors"];
 	
 	return self;
 
 }
 
+
 - (void) dealloc {
 	[programName release];
 	[arguments release];
+	[processors release];
 	[super dealloc];
 }
 
 
 - (int)run {
 
-	ImageProcessor *ip = [ImageProcessor processor];
-
 	unsigned int i, count = [arguments count];
+	
+	if (count < 1) {
+		fprintf(stderr, "Usage: CoreImageTool action key parameters [action key parameters ...]\n");
+		fprintf(stderr, "See http://www.entropy.ch/software/macosx/coreimagetool for details\n");
+		return 1;
+	}
+	
 	for (i = 0; i < count; i++) {
 		NSString *actionKey = [arguments objectAtIndex:i];
 		Action *action = [Action actionForKey:actionKey];
 		if (!action) continue;
 
-		int parameterCount = [action parameterCount];
 		int availableArguments = [arguments count] - (i + 1);
-		if (availableArguments < parameterCount) {
-			NSLog(@"action '%@' expects %d parameters but only %d arguments remain", actionKey, parameterCount, availableArguments);
+		NSArray *lookaheadArguments =
+			availableArguments > 0 ?
+			[arguments subarrayWithRange:NSMakeRange(i + 1, availableArguments)]
+			: [NSArray array];
+		int requiredParameterCount = [action requiredParameterCount:lookaheadArguments];
+		if (availableArguments < requiredParameterCount) {
+			NSLog(@"action '%@' expects %d parameters but only %d arguments remain", actionKey, requiredParameterCount, availableArguments);
 			return 1;
 		}
 
 		NSMutableArray *actionParameters = [NSMutableArray array];
 		int j;
-		for (j = 0; j < parameterCount; j++) {
+		for (j = 0; j < requiredParameterCount; j++) {
 			i++;
 			[actionParameters addObject:[arguments objectAtIndex:i]];
 		}
 		
-		BOOL result = [action runWithParameters:actionParameters processor:ip];
+		BOOL result = [action runWithParameters:actionParameters processors:processors];
 		if (!result) {
 			NSLog(@"action '%@' failed", actionKey);
 			return 1;

@@ -86,6 +86,9 @@
 }
 
 
+- (CIImage *)image {
+	return ci;
+}
 
 
 - (BOOL)writeResultToPath:(NSString *)outFilePath {

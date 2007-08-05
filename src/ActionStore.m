@@ -10,8 +10,10 @@
 
 @implementation ActionStore
 
-- (BOOL)runWithParameters:(NSArray *)parameters processor:(ImageProcessor *)ip {
-	NSString *outFilePath = [parameters objectAtIndex:0];
+- (BOOL)run {
+	ImageProcessor *ip = [self keyedImageProcessor];
+	if (!ip) return NO;
+	NSString *outFilePath = [self parameterAtIndex:1];
 	return [ip writeResultToPath:outFilePath];
 }
 
