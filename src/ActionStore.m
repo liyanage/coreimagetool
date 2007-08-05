@@ -14,7 +14,12 @@
 	ImageProcessor *ip = [self keyedImageProcessor];
 	if (!ip) return NO;
 	NSString *outFilePath = [self parameterAtIndex:1];
-	return [ip writeResultToPath:outFilePath];
+	NSString *type = [self parameterAtIndex:2];
+	return [ip writeResultToPath:outFilePath type:type];
+}
+
+- (int)requiredParameterCount:(NSArray *)lookaheadArguments {
+	return 3;
 }
 
 @end

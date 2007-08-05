@@ -66,6 +66,7 @@
 		NSString *actionKey = [arguments objectAtIndex:i];
 		Action *action = [Action actionForKey:actionKey];
 		if (!action) continue;
+		[action setValue:self forKey:@"logger"];
 
 		int availableArguments = [arguments count] - (i + 1);
 		NSArray *lookaheadArguments =
@@ -94,6 +95,18 @@
 
 	return 0;
 }
+
+
+
+- (void)logVerbose:(NSString *)message {
+	if (!verbose) return;
+	NSLog(message);
+}
+
+- (void)setVerbose:(BOOL)newVerbose {
+	verbose = newVerbose;
+}
+
 
 
 @end

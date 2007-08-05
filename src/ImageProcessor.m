@@ -91,7 +91,7 @@
 }
 
 
-- (BOOL)writeResultToPath:(NSString *)outFilePath {
+- (BOOL)writeResultToPath:(NSString *)outFilePath type:(NSString *)type {
 
 	CIImage *resultImage = ci;
 	CGRect extent = [resultImage extent];
@@ -113,7 +113,7 @@
 
 	CGImageDestinationRef dest = CGImageDestinationCreateWithURL(
 		(CFURLRef)[NSURL fileURLWithPath:outFilePath],
-		CFSTR("public.jpeg"),
+		(CFStringRef)type,
 		1,
 		NULL
 	);

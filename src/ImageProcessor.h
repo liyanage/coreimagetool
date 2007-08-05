@@ -21,7 +21,7 @@
 + (ImageProcessor *)processorForInputFile:(NSString *)inFilePath;
 - (ImageProcessor *)initWithInputFile:(NSString *)inFilePath;
 - (BOOL)setupImage;
-- (BOOL)writeResultToPath:(NSString *)outFilePath;
+- (BOOL)writeResultToPath:(NSString *)outFilePath type:(NSString *)type;
 - (BOOL)createBitmapContextWithWidth:(int)pixelsWide Height:(int)pixelsHigh;
 - (BOOL)setInputFile:(NSString *)inPath;
 - (void)freeContext;

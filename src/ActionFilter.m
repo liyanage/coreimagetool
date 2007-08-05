@@ -18,7 +18,7 @@
 
 	NSString *filterName = [self parameterAtIndex:1];
 	NSString *filterParameter = [self parameterCount] > 2 ? [self parameterAtIndex:2] : nil;
-	NSLog(@"filter: %@ %@", filterName, filterParameter);
+	[[self valueForKey:@"logger"] logVerbose: [NSString stringWithFormat:@"filter: %@ %@", filterName, filterParameter]];
 
 	CIFilter *filter = [ip prepareFilter:filterName];
 	if (!filter) return NO;

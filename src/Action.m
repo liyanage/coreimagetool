@@ -25,6 +25,7 @@
 - (void) dealloc {
 	[processors release];
 	[parameters release];
+	[logger release];
 	[super dealloc];
 }
 

@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "ImageProcessor.h"
 #import "KeyedImageSourceProtocol.h"
+#import "LoggerProtocol.h"
 
 @interface Action : NSObject <KeyedImageSource> {
 	NSMutableDictionary *processors;
 	NSArray *parameters;
-
+	id <Logger>logger;
 }
 
 + (Action *)actionForKey:(NSString *)key;

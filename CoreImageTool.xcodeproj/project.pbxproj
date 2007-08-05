@@ -34,6 +34,12 @@
 		1B18DC4A0C65520800BA68CA /* ValueClassConverterCIImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B18DC480C65520800BA68CA /* ValueClassConverterCIImage.h */; };
 		1B18DC4B0C65520800BA68CA /* ValueClassConverterCIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B18DC490C65520800BA68CA /* ValueClassConverterCIImage.m */; };
 		1B18DEC10C65ECB300BA68CA /* KeyedImageSourceProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B18DEBF0C65ECB300BA68CA /* KeyedImageSourceProtocol.h */; };
+		1B18E1280C66281D00BA68CA /* Version.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B18E1270C66281D00BA68CA /* Version.h */; };
+		1B18E12D0C66285500BA68CA /* ActionVersion.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B18E12B0C66285500BA68CA /* ActionVersion.h */; };
+		1B18E12E0C66285500BA68CA /* ActionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B18E12C0C66285500BA68CA /* ActionVersion.m */; };
+		1B18E1600C6628F800BA68CA /* ActionVerbose.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B18E15E0C6628F800BA68CA /* ActionVerbose.h */; };
+		1B18E1610C6628F800BA68CA /* ActionVerbose.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B18E15F0C6628F800BA68CA /* ActionVerbose.m */; };
+		1B18E1670C66299300BA68CA /* LoggerProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B18E1660C66299300BA68CA /* LoggerProtocol.h */; };
 		1BA8BB280C60A950002191A1 /* ImageProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BA8BB260C60A950002191A1 /* ImageProcessor.h */; };
 		1BA8BB290C60A950002191A1 /* ImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA8BB270C60A950002191A1 /* ImageProcessor.m */; };
 		1BA8BEEE0C61478A002191A1 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA8BEED0C61478A002191A1 /* ApplicationServices.framework */; };
@@ -66,6 +72,10 @@
 				1B18DAF40C65445700BA68CA /* ValueClassConverterCIColor.h in CopyFiles */,
 				1B18DC4A0C65520800BA68CA /* ValueClassConverterCIImage.h in CopyFiles */,
 				1B18DEC10C65ECB300BA68CA /* KeyedImageSourceProtocol.h in CopyFiles */,
+				1B18E1280C66281D00BA68CA /* Version.h in CopyFiles */,
+				1B18E12D0C66285500BA68CA /* ActionVersion.h in CopyFiles */,
+				1B18E1600C6628F800BA68CA /* ActionVerbose.h in CopyFiles */,
+				1B18E1670C66299300BA68CA /* LoggerProtocol.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -101,6 +111,12 @@
 		1B18DC480C65520800BA68CA /* ValueClassConverterCIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValueClassConverterCIImage.h; path = src/ValueClassConverterCIImage.h; sourceTree = "<group>"; };
 		1B18DC490C65520800BA68CA /* ValueClassConverterCIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ValueClassConverterCIImage.m; path = src/ValueClassConverterCIImage.m; sourceTree = "<group>"; };
 		1B18DEBF0C65ECB300BA68CA /* KeyedImageSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyedImageSourceProtocol.h; path = src/KeyedImageSourceProtocol.h; sourceTree = "<group>"; };
+		1B18E1270C66281D00BA68CA /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Version.h; path = src/Version.h; sourceTree = "<group>"; };
+		1B18E12B0C66285500BA68CA /* ActionVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionVersion.h; path = src/ActionVersion.h; sourceTree = "<group>"; };
+		1B18E12C0C66285500BA68CA /* ActionVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionVersion.m; path = src/ActionVersion.m; sourceTree = "<group>"; };
+		1B18E15E0C6628F800BA68CA /* ActionVerbose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionVerbose.h; path = src/ActionVerbose.h; sourceTree = "<group>"; };
+		1B18E15F0C6628F800BA68CA /* ActionVerbose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionVerbose.m; path = src/ActionVerbose.m; sourceTree = "<group>"; };
+		1B18E1660C66299300BA68CA /* LoggerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoggerProtocol.h; path = src/LoggerProtocol.h; sourceTree = "<group>"; };
 		1BA8BB260C60A950002191A1 /* ImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageProcessor.h; path = src/ImageProcessor.h; sourceTree = "<group>"; };
 		1BA8BB270C60A950002191A1 /* ImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageProcessor.m; path = src/ImageProcessor.m; sourceTree = "<group>"; };
 		1BA8BEED0C61478A002191A1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -140,11 +156,12 @@
 			children = (
 				32A70AAB03705E1F00C91783 /* CoreImageTool_Prefix.pch */,
 				08FB7796FE84155DC02AAC07 /* CoreImageTool.m */,
-				1B18DEBF0C65ECB300BA68CA /* KeyedImageSourceProtocol.h */,
 				1BA8BB260C60A950002191A1 /* ImageProcessor.h */,
 				1BA8BB270C60A950002191A1 /* ImageProcessor.m */,
 				1B0AAC8A0C62505500211E78 /* CommandLineDriver.h */,
 				1B0AAC8B0C62505500211E78 /* CommandLineDriver.m */,
+				1B18E1270C66281D00BA68CA /* Version.h */,
+				1B18E1680C6629A000BA68CA /* Protocols */,
 				1B18E0610C65F9A000BA68CA /* Actions */,
 				1B18E0630C65F9CD00BA68CA /* Parameter Parsers */,
 				1B18E0620C65F9B900BA68CA /* Value Converters */,
@@ -181,6 +198,10 @@
 				1B0AAFFF0C628D0000211E78 /* ActionStore.m */,
 				1B0AB06F0C6290B100211E78 /* ActionFilter.h */,
 				1B0AB0700C6290B100211E78 /* ActionFilter.m */,
+				1B18E15E0C6628F800BA68CA /* ActionVerbose.h */,
+				1B18E15F0C6628F800BA68CA /* ActionVerbose.m */,
+				1B18E12B0C66285500BA68CA /* ActionVersion.h */,
+				1B18E12C0C66285500BA68CA /* ActionVersion.m */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -213,6 +234,15 @@
 				1B0AB0C30C62995200211E78 /* FilterParameterParserGeneric.m */,
 			);
 			name = "Parameter Parsers";
+			sourceTree = "<group>";
+		};
+		1B18E1680C6629A000BA68CA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1B18DEBF0C65ECB300BA68CA /* KeyedImageSourceProtocol.h */,
+				1B18E1660C66299300BA68CA /* LoggerProtocol.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		C6859EA2029092E104C91782 /* Documentation */ = {
@@ -279,6 +309,8 @@
 				1B18DA850C653F3F00BA68CA /* ValueClassConverterNSAffineTransform.m in Sources */,
 				1B18DAF50C65445700BA68CA /* ValueClassConverterCIColor.m in Sources */,
 				1B18DC4B0C65520800BA68CA /* ValueClassConverterCIImage.m in Sources */,
+				1B18E12E0C66285500BA68CA /* ActionVersion.m in Sources */,
+				1B18E1610C6628F800BA68CA /* ActionVerbose.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

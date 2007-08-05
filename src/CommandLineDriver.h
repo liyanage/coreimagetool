@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "ImageProcessor.h"
 #import "Action.h"
+#import "LoggerProtocol.h"
 
-@interface CommandLineDriver : NSObject {
+@interface CommandLineDriver : NSObject <Logger> {
 	NSString *programName;
 	NSMutableArray *arguments;
 	NSMutableDictionary *processors;
+	BOOL verbose;
 }
 
 + (int)runWithArguments:(const char*[])argv count:(int)argc;
