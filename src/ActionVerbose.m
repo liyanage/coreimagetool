@@ -14,7 +14,7 @@
 - (BOOL)run {
 	id l = [self valueForKey:@"logger"];
 	[l setVerbose:YES];
-	[l logVerbose:@"verbose on"];
+	[l logVerbose:@"verbose: on"];
 	return YES;
 }
 

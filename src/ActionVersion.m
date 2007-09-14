@@ -11,7 +11,7 @@
 @implementation ActionVersion
 
 - (BOOL)run {
-	NSLog(@"CoreImageTool version %s", VERSION);
+	NSLog(@"version: CoreImageTool %s", VERSION);
 	return YES;
 }
 

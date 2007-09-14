@@ -15,6 +15,7 @@
 	if (!key) return NO;
 	ImageProcessor *ip = [self createImageProcessorForKey:key];
 	NSString *filename = [self parameterAtIndex:1];
+	[[self valueForKey:@"logger"] logVerbose: [NSString stringWithFormat:@"load: %@", filename]];
 	return [ip setInputFile:filename];
 }
 

@@ -126,6 +126,8 @@
 	CGImageDestinationAddImage(dest, outputCGImage, nil);
 	result = CGImageDestinationFinalize(dest);
 	CFRelease(dest);
+	CGImageRelease(outputCGImage);
+	[ciContext reclaimResources];
 
 	if (!result) {
 		NSLog(@"Unable to write image to '%@'", outFilePath);
@@ -175,6 +177,7 @@
 		//kCGImageAlphaPremultipliedLast
 		kCGImageAlphaNoneSkipLast
 	);
+	CGColorSpaceRelease(colorSpace);
 
 	if (!context) {
 		free (bitmapData);
@@ -182,7 +185,6 @@
 		return NO;
 	}
 	
-	CGColorSpaceRelease(colorSpace);
 	return YES;
 }
 

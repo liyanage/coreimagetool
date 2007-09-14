@@ -7,16 +7,28 @@
 //
 
 #import "CommandLineDriver.h"
+#include <stdio.h>
 
 
 @implementation CommandLineDriver
 
 
 + (int)runWithArguments:(const char*[])argv count:(int)argc {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	CommandLineDriver *cld = [CommandLineDriver driverForArguments:argv count:argc];
-	int result = [cld run];
-	[pool release];
+
+	int result, iterations = 10, i;
+	for (i = 0; i < iterations; i++) {
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		CommandLineDriver *cld = [CommandLineDriver driverForArguments:argv count:argc];
+		result = [cld run];
+		[pool release];
+	}
+
+	if (1) {
+		char foo[100];
+		fprintf(stderr, "hit any key...\n");
+		fgets(foo, 100, stdin);
+	}
+	
 	return result;
 }
 
@@ -102,6 +114,7 @@
 	if (!verbose) return;
 	NSLog(message);
 }
+
 
 - (void)setVerbose:(BOOL)newVerbose {
 	verbose = newVerbose;

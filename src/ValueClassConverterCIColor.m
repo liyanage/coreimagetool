@@ -22,7 +22,7 @@
 	return [CIColor colorWithRed:[[items objectAtIndex:0] floatValue]
 						   green:[[items objectAtIndex:1] floatValue]
 		                    blue:[[items objectAtIndex:2] floatValue]
-		                   alpha:[[items objectAtIndex:0] floatValue]];
+		                   alpha:[[items objectAtIndex:3] floatValue]];
 	
 	
 }

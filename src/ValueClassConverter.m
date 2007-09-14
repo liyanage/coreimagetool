@@ -13,7 +13,6 @@
 
 
 + (id)convertString:(NSString *)string toValueOfClass:(NSString *)className imageSource:(id<KeyedImageSource>) imageSource {
-
 	NSString *handlerClassName = [NSStringFromClass(self) stringByAppendingString:className];
 	Class handlerClass = NSClassFromString(handlerClassName);
 	
@@ -25,7 +24,6 @@
 	ValueClassConverter *converter = [[[handlerClass alloc] init] autorelease];
 	[converter setValue:imageSource forKey:@"imageSource"];
 	return [converter convertString:string];
-	
 }
 
 

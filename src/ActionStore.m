@@ -15,6 +15,7 @@
 	if (!ip) return NO;
 	NSString *outFilePath = [self parameterAtIndex:1];
 	NSString *type = [self parameterAtIndex:2];
+	[[self valueForKey:@"logger"] logVerbose: [NSString stringWithFormat:@"store: type %@ to path %@", type, outFilePath]];
 	return [ip writeResultToPath:outFilePath type:type];
 }
 
