@@ -15,7 +15,7 @@
 
 + (int)runWithArguments:(const char*[])argv count:(int)argc {
 
-	int result, iterations = 10, i;
+	int result, iterations = 1, i;
 	for (i = 0; i < iterations; i++) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		CommandLineDriver *cld = [CommandLineDriver driverForArguments:argv count:argc];
@@ -23,7 +23,7 @@
 		[pool release];
 	}
 
-	if (1) {
+	if (0) {
 		char foo[100];
 		fprintf(stderr, "hit any key...\n");
 		fgets(foo, 100, stdin);
