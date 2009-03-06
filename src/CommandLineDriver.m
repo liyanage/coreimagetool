@@ -18,6 +18,7 @@
 	int result, iterations = 1, i;
 	for (i = 0; i < iterations; i++) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		[CIPlugIn loadAllPlugIns];
 		CommandLineDriver *cld = [CommandLineDriver driverForArguments:argv count:argc];
 		result = [cld run];
 		[pool release];
