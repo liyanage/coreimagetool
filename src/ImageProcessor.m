@@ -92,7 +92,11 @@
 
 
 - (BOOL)writeResultToPath:(NSString *)outFilePath type:(NSString *)type {
+	return [self writeResultToPath:outFilePath type:type quality:nil];
+}
 
+
+- (BOOL)writeResultToPath:(NSString *)outFilePath type:(NSString *)type quality:(NSNumber *)quality {
 	CIImage *resultImage = ci;
 	CGRect extent = [resultImage extent];
 	BOOL result = [self createBitmapContextWithWidth:extent.size.width Height:extent.size.height];
@@ -123,7 +127,8 @@
 		return NO;
 	}
 
-	CGImageDestinationAddImage(dest, outputCGImage, nil);
+	NSDictionary *options = quality ? [NSDictionary dictionaryWithObjectsAndKeys:quality, kCGImageDestinationLossyCompressionQuality, nil] : nil;
+	CGImageDestinationAddImage(dest, outputCGImage, (CFDictionaryRef)options);
 	result = CGImageDestinationFinalize(dest);
 	CFRelease(dest);
 	CGImageRelease(outputCGImage);
@@ -135,11 +140,8 @@
 	}
 
 	return YES;
+
 }
-
-
-
-
 
 
 
