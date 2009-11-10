@@ -124,6 +124,7 @@
 
 	if (!dest) {
 		NSLog(@"Unable to create destination file with output path '%@'", outFilePath);
+		CGImageRelease(outputCGImage);
 		return NO;
 	}
 
@@ -166,6 +167,7 @@
 
 	if (!bitmapData) {
 		NSLog(@"Unable to allocate memory for bitmap CGContextRef");
+		CGColorSpaceRelease(colorSpace);
 		return NO;
 	}
 

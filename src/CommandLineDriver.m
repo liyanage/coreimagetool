@@ -110,10 +110,9 @@
 }
 
 
-
 - (void)logVerbose:(NSString *)message {
 	if (!verbose) return;
-	NSLog(message);
+	NSLog(@"%@", message);
 }
 
 
