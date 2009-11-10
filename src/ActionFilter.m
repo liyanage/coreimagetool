@@ -42,11 +42,15 @@
 
 + (BOOL)filterHasParameters:(NSString *)filterName {
 	return ![[NSArray arrayWithObjects:
-		@"CIColorInvert",
-		@"CIMaskToAlpha",
-		@"CIMedianFilter",
-		nil
-	] containsObject:filterName];
+			  @"CIColorInvert",
+			  @"CIComicEffect",
+			  @"CIMaskToAlpha",
+			  @"CIMaximumComponent",
+			  @"CIMinimumComponent",
+			  @"CIConstantColorGenerator",
+			  @"CIMaskToAlpha",
+			  @"CIMedianFilter",
+			  nil] containsObject:filterName];
 }
 
 

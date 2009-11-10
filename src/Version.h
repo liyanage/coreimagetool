@@ -3,8 +3,8 @@
  *  CoreImageTool
  *
  *  Created by Marc Liyanage on 05.08.07.
- *  Copyright 2007 Marc Liyanage <http://www.entropy.ch>. All rights reserved.
+ *  Copyright 2007-2009 Marc Liyanage <http://www.entropy.ch>. All rights reserved.
  *
  */
 
-#define VERSION "1.1"
+#define VERSION "1.2"
