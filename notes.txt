@@ -2,6 +2,9 @@
 verbose version load image /Users/liyanage/svn/entropy/CoreImageTool/test-images/test2-in.jpg filter image CIAffineClamp transform=1,0,0,1,0,0 filter image CICrop rectangle=0,0,200,100 load bgimg /Users/liyanage/svn/entropy/CoreImageTool/test-images/test1-in.jpg filter bgimg CIColorInvert filter image CIAdditionCompositing backgroundImage=bgimg filter image CIUnsharpMask radius=1.0:intensity=2.0 store image /Users/liyanage/svn/entropy/CoreImageTool/test-images/test2-out1.jpg public.jpeg filter image CILanczosScaleTransform scale=0.75:aspectRatio=1  filter image CIMotionBlur radius=10.0:angle=1.2 filter image CICrop rectangle=0,0,200,100 filter image CIColorInvert filter image CIColorMonochrome color=1,0,0,1:intensity=1 store image /Users/liyanage/svn/entropy/CoreImageTool/test-images/test2-out2.jpg public.jpeg
 
 
+adsf
+
+
 verbose
 version
 load image ../../test-images/test2-in.jpg

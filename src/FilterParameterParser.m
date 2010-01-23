@@ -39,7 +39,7 @@
 
 
 - (BOOL)configureFilter:(CIFilter *)filter withParameterString:(NSString *)parameterString {
-	[NSException raise:NSGenericException format:@"%@ is abstract", _cmd];
+	[NSException raise:NSGenericException format:@"%@ is abstract", NSStringFromSelector(_cmd)];
 	return NO; // not reached
 }
 
