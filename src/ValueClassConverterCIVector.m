@@ -13,7 +13,7 @@
 
 - (id)convertString:(NSString *)string {
 
-	float values[4];
+	CGFloat values[4];
 	NSArray *items = [string componentsSeparatedByString:@","];
 	unsigned int i, count = [items count];
 	if (count < 1) {
