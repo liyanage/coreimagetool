@@ -67,7 +67,7 @@
 
 - (int)run {
 
-	unsigned int i, count = [arguments count];
+	NSUInteger i, count = [arguments count];
 	
 	if (count < 1) {
 		fprintf(stderr, "Usage: CoreImageTool action key parameters [action key parameters ...]\n");
@@ -81,14 +81,14 @@
 		if (!action) continue;
 		[action setValue:self forKey:@"logger"];
 
-		int availableArguments = [arguments count] - (i + 1);
+		NSUInteger availableArguments = [arguments count] - (i + 1);
 		NSArray *lookaheadArguments =
 			availableArguments > 0 ?
 			[arguments subarrayWithRange:NSMakeRange(i + 1, availableArguments)]
 			: [NSArray array];
 		int requiredParameterCount = [action requiredParameterCount:lookaheadArguments];
 		if (availableArguments < requiredParameterCount) {
-			NSLog(@"action '%@' expects %d parameters but only %d arguments remain", actionKey, requiredParameterCount, availableArguments);
+			NSLog(@"action '%@' expects %d parameters but only %lu arguments remain", actionKey, requiredParameterCount, availableArguments);
 			return 1;
 		}
 

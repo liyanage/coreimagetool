@@ -25,7 +25,7 @@
 - (ImageProcessor *)keyedImageProcessor;
 - (NSString *)keyParameter;
 - (NSString *)parameterAtIndex:(int)i;
-- (int)parameterCount;
+- (NSUInteger)parameterCount;
 - (ImageProcessor *)imageProcessorForKey:(NSString *)key;
 
 @end

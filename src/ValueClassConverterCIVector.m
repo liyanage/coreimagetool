@@ -15,7 +15,7 @@
 
 	CGFloat values[4];
 	NSArray *items = [string componentsSeparatedByString:@","];
-	unsigned int i, count = [items count];
+	NSUInteger i, count = [items count];
 	if (count < 1) {
 		NSLog(@"Invalid arguments for CIVector value construction");
 		return nil;

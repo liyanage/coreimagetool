@@ -47,7 +47,7 @@
 - (NSDictionary *)splitParameterString:(NSString *)string {
 	NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
 	NSArray *pairs = [string componentsSeparatedByString:@":"];
-	unsigned int i, count = [pairs count];
+	NSUInteger i, count = [pairs count];
 	if (count < 1) {
 		NSLog(@"empty parameter string");
 		return parameters;
