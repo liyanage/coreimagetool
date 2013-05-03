@@ -135,7 +135,7 @@ This section list a few frequently asked questions and their answers.
 
 * When I crop and resize an image, sometimes I have a white 1 pixel line on the sides I cropped.
 
-    You are probably getting partially transparent pixels at the edge when you scale and you might need to add a CIAffineClamp filter. Dan Wood wrote a very good explanation and solution for this issue.
+    You are probably getting partially transparent pixels at the edge when you scale and you might need to add a [CIAffineClamp](href="http://developer.apple.com/DOCUMENTATION/GraphicsImaging/Reference/CoreImageFilterReference/Reference/reference.html#//apple_ref/doc/filter/ci/CIAffineClamp) filter. Dan Wood wrote a very good [explanation and solution](http://gigliwood.com/weblog/Cocoa/Core_Image,_part_2.html) for this issue.
 
 # Additional Information
 
