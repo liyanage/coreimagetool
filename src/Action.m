@@ -78,15 +78,15 @@
 }
 
 - (NSString *)parameterAtIndex:(int)i {
-	int count = [self parameterCount];
+	NSUInteger count = [self parameterCount];
 	if (i >= count) {
-		NSLog(@"only %d parameters available, index %d not valid", count, i);
+		NSLog(@"only %lu parameters available, index %d not valid", count, i);
 		return nil;
 	}
 	return [parameters objectAtIndex:i];
 }
 
-- (int)parameterCount {
+- (NSUInteger)parameterCount {
 	return [parameters count];
 }
 
