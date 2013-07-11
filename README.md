@@ -8,7 +8,9 @@ You can use CoreImageTool to experiment with Core Image filters, batch-process l
 
 CoreImageTool consists of just one file which you can download here. Store it somewhere on your disk, like /usr/local/bin, and make it executable:
 
-    sudo mkdir -p /usr/local/bin sudo curl -o /usr/local/bin/CoreImageTool http://www2.entropy.ch/download/CoreImageTool sudo chmod 755 /usr/local/bin/CoreImageTool
+    sudo mkdir -p /usr/local/bin
+    sudo curl -o /usr/local/bin/CoreImageTool http://www2.entropy.ch/download/CoreImageTool
+    sudo chmod 755 /usr/local/bin/CoreImageTool
 
 Now you can invoke it like this:
 
